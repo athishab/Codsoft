@@ -5,13 +5,13 @@
 
 using namespace std;
 
-int count(string text)
+int word_count(string texts)
 {
     int words=0;
-    stringstream totalwords (text);
-    string word;
+    stringstream total_words (texts);
+    string w;
 
-    while (totalwords >> word)
+    while (total_words >> word)
     {
         words++;
     }
@@ -29,10 +29,10 @@ int main()
 
     if (!file)
     {
-        cout << "Error!! This file is not opening." << "\n";
+        cout << "Error!! This file is not opening, please enter proper file name." << "\n";
     }
 
-    string content;
+    string inside;
     string line;
 
     while (getline(file, line))
@@ -40,7 +40,7 @@ int main()
         content += line + "";
     }
 
-    int wordCount = count(content);
+    int wordCount = word_count(inside);
 
     cout<<"Total words in this file are: " <<wordCount << "\n";
     file.close();
